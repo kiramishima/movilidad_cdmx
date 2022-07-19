@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7a4dc5c0a6d3323464e024bbf3150c89 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_7a4dc5c0a6d3323464e024bbf3150c89" ></div>
+        
+</body>
+<script>    
+    
+            var map_7a4dc5c0a6d3323464e024bbf3150c89 = L.map(
+                "map_7a4dc5c0a6d3323464e024bbf3150c89",
+                {
+                    center: [19.3316259637757, -99.167557595944],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_7a4dc5c0a6d3323464e024bbf3150c89);
+
+            
+
+        
+    
+            var tile_layer_40c3dacc9a455d215adb45339e9f4dd3 = L.tileLayer(
+                "https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7a4dc5c0a6d3323464e024bbf3150c89);
+        
+    
+            map_7a4dc5c0a6d3323464e024bbf3150c89.fitBounds(
+                [[19.27947360377738, -99.19071438138118], [19.38377832377402, -99.14440081050682]],
+                {}
+            );
+        
+    
+        function geo_json_03c48d44aea70f691155d86bf73e792b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_03c48d44aea70f691155d86bf73e792b_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_03c48d44aea70f691155d86bf73e792b_pointToLayer(feature, latlng) {
+            var opts = {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 3};
+            
+            let style = geo_json_03c48d44aea70f691155d86bf73e792b_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_03c48d44aea70f691155d86bf73e792b_onEachFeature(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        geo_json_03c48d44aea70f691155d86bf73e792b.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_03c48d44aea70f691155d86bf73e792b_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_03c48d44aea70f691155d86bf73e792b = L.geoJson(null, {
+                onEachFeature: geo_json_03c48d44aea70f691155d86bf73e792b_onEachFeature,
+            
+                style: geo_json_03c48d44aea70f691155d86bf73e792b_styler,
+                pointToLayer: geo_json_03c48d44aea70f691155d86bf73e792b_pointToLayer
+        });
+
+        function geo_json_03c48d44aea70f691155d86bf73e792b_add (data) {
+            geo_json_03c48d44aea70f691155d86bf73e792b
+                .addData(data)
+                .addTo(map_7a4dc5c0a6d3323464e024bbf3150c89);
+        }
+            geo_json_03c48d44aea70f691155d86bf73e792b_add({"bbox": [-99.19071438138118, 19.27947360377738, -99.14440081050682, 19.38377832377402], "features": [{"bbox": [-99.1906271466764, 19.383082625228962, -99.1906271466764, 19.383082625228962], "geometry": {"coordinates": [-99.1906271466764, 19.383082625228962], "type": "Point"}, "id": "0", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.1906271466764, "Longitude": 19.383082625228962, "Tiempo": "5:30AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.1906271466764, 19.383082625228962], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.19071438138118, 19.38367013560702, -99.19071438138118, 19.38367013560702], "geometry": {"coordinates": [-99.19071438138118, 19.38367013560702], "type": "Point"}, "id": "1", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.19071438138118, "Longitude": 19.38367013560702, "Tiempo": "5:33AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.19071438138118, 19.38367013560702], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.18416246474426, 19.382961076037986, -99.18416246474426, 19.382961076037986], "geometry": {"coordinates": [-99.18416246474426, 19.382961076037986], "type": "Point"}, "id": "2", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.18416246474426, "Longitude": 19.382961076037986, "Tiempo": "5:40AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.18416246474426, 19.382961076037986], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.18375208678239, 19.38377832377402, -99.18375208678239, 19.38377832377402], "geometry": {"coordinates": [-99.18375208678239, 19.38377832377402], "type": "Point"}, "id": "3", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.18375208678239, "Longitude": 19.38377832377402, "Tiempo": "5:43AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.18375208678239, 19.38377832377402], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.18137564967644, 19.382705527130742, -99.18137564967644, 19.382705527130742], "geometry": {"coordinates": [-99.18137564967644, 19.382705527130742], "type": "Point"}, "id": "4", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.18137564967644, "Longitude": 19.382705527130742, "Tiempo": "5:48AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.18137564967644, 19.382705527130742], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.1794927391155, 19.3816681463057, -99.1794927391155, 19.3816681463057], "geometry": {"coordinates": [-99.1794927391155, 19.3816681463057], "type": "Point"}, "id": "5", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.1794927391155, "Longitude": 19.3816681463057, "Tiempo": "5:52AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.1794927391155, 19.3816681463057], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.17617752875515, 19.382839627094555, -99.17617752875515, 19.382839627094555], "geometry": {"coordinates": [-99.17617752875515, 19.382839627094555], "type": "Point"}, "id": "6", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.17617752875515, "Longitude": 19.382839627094555, "Tiempo": "6:00AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.17617752875515, 19.382839627094555], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.17615338887623, 19.38250058168496, -99.17615338887623, 19.38250058168496], "geometry": {"coordinates": [-99.17615338887623, 19.38250058168496], "type": "Point"}, "id": "7", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.17615338887623, "Longitude": 19.38250058168496, "Tiempo": "6:15AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.17615338887623, 19.38250058168496], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.19045862470468, 19.33979501073667, -99.19045862470468, 19.33979501073667], "geometry": {"coordinates": [-99.19045862470468, 19.33979501073667], "type": "Point"}, "id": "8", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 6.0, "Latitude": -99.19045862470468, "Longitude": 19.33979501073667, "Tiempo": "7:25AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "METROBUS", "loc": {"coordinates": [-99.19045862470468, 19.33979501073667], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.18500837633597, 19.29577244917112, -99.18500837633597, 19.29577244917112], "geometry": {"coordinates": [-99.18500837633597, 19.29577244917112], "type": "Point"}, "id": "9", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.18500837633597, "Longitude": 19.29577244917112, "Tiempo": "7:45AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "METROBUS", "loc": {"coordinates": [-99.18500837633597, 19.29577244917112], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.17370018345714, 19.29071942361733, -99.17370018345714, 19.29071942361733], "geometry": {"coordinates": [-99.17370018345714, 19.29071942361733], "type": "Point"}, "id": "10", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.17370018345714, "Longitude": 19.29071942361733, "Tiempo": "7:58AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "METROBUS", "loc": {"coordinates": [-99.17370018345714, 19.29071942361733], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.17584595047266, 19.28463330819647, -99.17584595047266, 19.28463330819647], "geometry": {"coordinates": [-99.17584595047266, 19.28463330819647], "type": "Point"}, "id": "11", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.17584595047266, "Longitude": 19.28463330819647, "Tiempo": "8:05AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "METROBUS", "loc": {"coordinates": [-99.17584595047266, 19.28463330819647], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.17499837220686, 19.28268894403653, -99.17499837220686, 19.28268894403653], "geometry": {"coordinates": [-99.17499837220686, 19.28268894403653], "type": "Point"}, "id": "12", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.17499837220686, "Longitude": 19.28268894403653, "Tiempo": "8:15AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "METROBUS", "loc": {"coordinates": [-99.17499837220686, 19.28268894403653], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.17006310807118, 19.280339473298586, -99.17006310807118, 19.280339473298586], "geometry": {"coordinates": [-99.17006310807118, 19.280339473298586], "type": "Point"}, "id": "13", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.17006310807118, "Longitude": 19.280339473298586, "Tiempo": "8:25AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "METROBUS", "loc": {"coordinates": [-99.17006310807118, 19.280339473298586], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.16795757381107, 19.27947360377738, -99.16795757381107, 19.27947360377738], "geometry": {"coordinates": [-99.16795757381107, 19.27947360377738], "type": "Point"}, "id": "14", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.16795757381107, "Longitude": 19.27947360377738, "Tiempo": "8:29AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.16795757381107, 19.27947360377738], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.16673180433538, 19.279612219151442, -99.16673180433538, 19.279612219151442], "geometry": {"coordinates": [-99.16673180433538, 19.279612219151442], "type": "Point"}, "id": "15", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.16673180433538, "Longitude": 19.279612219151442, "Tiempo": "8:31AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.16673180433538, 19.279612219151442], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.16221067774308, 19.29011799530174, -99.16221067774308, 19.29011799530174], "geometry": {"coordinates": [-99.16221067774308, 19.29011799530174], "type": "Point"}, "id": "16", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 6.0, "Latitude": -99.16221067774308, "Longitude": 19.29011799530174, "Tiempo": "8:35AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.16221067774308, 19.29011799530174], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.14440081050682, 19.304962766722397, -99.14440081050682, 19.304962766722397], "geometry": {"coordinates": [-99.14440081050682, 19.304962766722397], "type": "Point"}, "id": "17", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.14440081050682, "Longitude": 19.304962766722397, "Tiempo": "8:40AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.14440081050682, 19.304962766722397], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.14475486206437, 19.305286784907125, -99.14475486206437, 19.305286784907125], "geometry": {"coordinates": [-99.14475486206437, 19.305286784907125], "type": "Point"}, "id": "18", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.14475486206437, "Longitude": 19.305286784907125, "Tiempo": "8:45AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.14475486206437, 19.305286784907125], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.15205046991713, 19.297955716470298, -99.15205046991713, 19.297955716470298], "geometry": {"coordinates": [-99.15205046991713, 19.297955716470298], "type": "Point"}, "id": "19", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.15205046991713, "Longitude": 19.297955716470298, "Tiempo": "8:49AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.15205046991713, 19.297955716470298], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.15646002113401, 19.29700386857389, -99.15646002113401, 19.29700386857389], "geometry": {"coordinates": [-99.15646002113401, 19.29700386857389], "type": "Point"}, "id": "20", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.15646002113401, "Longitude": 19.29700386857389, "Tiempo": "8:53AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.15646002113401, 19.29700386857389], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.16091248769119, 19.30130739211318, -99.16091248769119, 19.30130739211318], "geometry": {"coordinates": [-99.16091248769119, 19.30130739211318], "type": "Point"}, "id": "21", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.16091248769119, "Longitude": 19.30130739211318, "Tiempo": "8:55AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.16091248769119, 19.30130739211318], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.16109487788752, 19.302249089227733, -99.16109487788752, 19.302249089227733], "geometry": {"coordinates": [-99.16109487788752, 19.302249089227733], "type": "Point"}, "id": "22", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.16109487788752, "Longitude": 19.302249089227733, "Tiempo": "8:57AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.16109487788752, 19.302249089227733], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.15983960418345, 19.303292037770092, -99.15983960418345, 19.303292037770092], "geometry": {"coordinates": [-99.15983960418345, 19.303292037770092], "type": "Point"}, "id": "23", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.15983960418345, "Longitude": 19.303292037770092, "Tiempo": "8:59AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.15983960418345, 19.303292037770092], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.15809080406581, 19.302340220918882, -99.15809080406581, 19.302340220918882], "geometry": {"coordinates": [-99.15809080406581, 19.302340220918882], "type": "Point"}, "id": "24", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.15809080406581, "Longitude": 19.302340220918882, "Tiempo": "9:03AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.15809080406581, 19.302340220918882], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.15795535252295, 19.30242818826706, -99.15795535252295, 19.30242818826706], "geometry": {"coordinates": [-99.15795535252295, 19.30242818826706], "type": "Point"}, "id": "25", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.15795535252295, "Longitude": 19.30242818826706, "Tiempo": "9:07AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.15795535252295, 19.30242818826706], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.16088633667069, 19.305281722202317, -99.16088633667069, 19.305281722202317], "geometry": {"coordinates": [-99.16088633667069, 19.305281722202317], "type": "Point"}, "id": "26", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.16088633667069, "Longitude": 19.305281722202317, "Tiempo": "9:10AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMION", "loc": {"coordinates": [-99.16088633667069, 19.305281722202317], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.16098289619842, 19.30804344501267, -99.16098289619842, 19.30804344501267], "geometry": {"coordinates": [-99.16098289619842, 19.30804344501267], "type": "Point"}, "id": "27", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.16098289619842, "Longitude": 19.30804344501267, "Tiempo": "9:15AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.16098289619842, 19.30804344501267], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.16073613299064, 19.308987634714825, -99.16073613299064, 19.308987634714825], "geometry": {"coordinates": [-99.16073613299064, 19.308987634714825], "type": "Point"}, "id": "28", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.16073613299064, "Longitude": 19.308987634714825, "Tiempo": "9:18AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.16073613299064, 19.308987634714825], "type": "Point"}}, "type": "Feature"}, {"bbox": [-99.15997706790888, 19.308820566699055, -99.15997706790888, 19.308820566699055], "geometry": {"coordinates": [-99.15997706790888, 19.308820566699055], "type": "Point"}, "id": "29", "properties": {"Coordenadas de Accidente": "Ninguna", "Costo": 0.0, "Latitude": -99.15997706790888, "Longitude": 19.308820566699055, "Tiempo": "9:22AM", "Tipo Accidente": "Ninguno", "Tipo Transporte": "CAMINAR", "loc": {"coordinates": [-99.15997706790888, 19.308820566699055], "type": "Point"}}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_03c48d44aea70f691155d86bf73e792b.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Tipo Transporte", "Coordenadas de Accidente", "Tipo Accidente", "Tiempo", "Costo", "Longitude", "Latitude", "loc"];
+    let aliases = ["Tipo Transporte", "Coordenadas de Accidente", "Tipo Accidente", "Tiempo", "Costo", "Longitude", "Latitude", "loc"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            var poly_line_7727868b157ba070b250152c0724ede8 = L.polyline(
+                [[19.383082625228962, -99.1906271466764], [19.38367013560702, -99.19071438138118], [19.382961076037986, -99.18416246474426], [19.38377832377402, -99.18375208678239], [19.382705527130742, -99.18137564967644], [19.3816681463057, -99.1794927391155], [19.382839627094555, -99.17617752875515], [19.38250058168496, -99.17615338887623], [19.33979501073667, -99.19045862470468], [19.29577244917112, -99.18500837633597], [19.29071942361733, -99.17370018345714], [19.28463330819647, -99.17584595047266], [19.28268894403653, -99.17499837220686], [19.280339473298586, -99.17006310807118], [19.27947360377738, -99.16795757381107], [19.279612219151442, -99.16673180433538], [19.29011799530174, -99.16221067774308], [19.304962766722397, -99.14440081050682], [19.305286784907125, -99.14475486206437], [19.297955716470298, -99.15205046991713], [19.29700386857389, -99.15646002113401], [19.30130739211318, -99.16091248769119], [19.302249089227733, -99.16109487788752], [19.303292037770092, -99.15983960418345], [19.302340220918882, -99.15809080406581], [19.30242818826706, -99.15795535252295], [19.305281722202317, -99.16088633667069], [19.30804344501267, -99.16098289619842], [19.308987634714825, -99.16073613299064], [19.308820566699055, -99.15997706790888]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_7a4dc5c0a6d3323464e024bbf3150c89);
+        
+</script>

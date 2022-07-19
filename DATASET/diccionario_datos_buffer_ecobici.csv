@@ -1,0 +1,23 @@
+Categoría,"                                            Nombre de la base y/o conjunto de datos
+
+","                                                     Nombre de la tabla de la base de datos / hoja del conjunto de datos
+
+",Descripción de capa,Etiqueta del campo o variable ,Descripció de Campo,"Tipo de dato
+",Rango o valores que permite el campo,"Clasificación de la información
+","Especificaciones y/o reglas de cálculo
+ 
+","Obligatoriedad del campo
+ 
+","Registro de campos vacíos 
+ 
+","Tipo de archivo:
+"
+Movilidad; Conectividad; Infraestructura y Obra Pública,buffer_ecobici,Área de influencia de Ecobici (500 mts),"Capa de información geoespacial que muestra la cobertura o área de influencia (150 metros) Ecobici, en Alcaldia, Benito Juárez, Cuauhtemoc, Miguel Hidalgo, Ciudade de México",id,IDENTIFICADOR,Número entero ,Número consecutivo,Pública,,Obligatorio,Sin datos vacios,Shape file (.shp)
+Movilidad; Conectividad; Infraestructura y Obra Pública,buffer_ecobici,Área de influencia de Ecobici (500 mts),"Capa de información geoespacial que muestra la cobertura o área de influencia (150 metros) Ecobici, en Alcaldia, Benito Juárez, Cuauhtemoc, Miguel Hidalgo, Ciudade de México",name,NOMBRE,Alfanumérico,Texto,Pública,,Obligatorio,Sin datos vacios,Shape file (.shp)
+Movilidad; Conectividad; Infraestructura y Obra Pública,buffer_ecobici,Área de influencia de Ecobici (500 mts),"Capa de información geoespacial que muestra la cobertura o área de influencia (150 metros) Ecobici, en Alcaldia, Benito Juárez, Cuauhtemoc, Miguel Hidalgo, Ciudade de México",address,DIRECCIÓN,Número decimales,28.6524822695   a   50.6258692629,Pública,,Obligatorio,Sin datos vacios,Shape file (.shp)
+Movilidad; Conectividad; Infraestructura y Obra Pública,buffer_ecobici,Área de influencia de Ecobici (500 mts),"Capa de información geoespacial que muestra la cobertura o área de influencia (150 metros) Ecobici, en Alcaldia, Benito Juárez, Cuauhtemoc, Miguel Hidalgo, Ciudade de México",addressnum,NUMERO,Alfanumérico,Texto,Pública,,Obligatorio,Sin datos vacios,Shape file (.shp)
+Movilidad; Conectividad; Infraestructura y Obra Pública,buffer_ecobici,Área de influencia de Ecobici (500 mts),"Capa de información geoespacial que muestra la cobertura o área de influencia (150 metros) Ecobici, en Alcaldia, Benito Juárez, Cuauhtemoc, Miguel Hidalgo, Ciudade de México",zipcode,CODIGO POSTAL,Número entero ,05600   a     3920,Pública,,Obligatorio,Con datos vacios,Shape file (.shp)
+Movilidad; Conectividad; Infraestructura y Obra Pública,buffer_ecobici,Área de influencia de Ecobici (500 mts),"Capa de información geoespacial que muestra la cobertura o área de influencia (150 metros) Ecobici, en Alcaldia, Benito Juárez, Cuauhtemoc, Miguel Hidalgo, Ciudade de México",districtna,COLONIA,Alfanumérico,Catálogo de Colonias Instituto Electoral (IECM),Pública,,Obligatorio,Con datos vacios,Shape file (.shp)
+Movilidad; Conectividad; Infraestructura y Obra Pública,buffer_ecobici,Área de influencia de Ecobici (500 mts),"Capa de información geoespacial que muestra la cobertura o área de influencia (150 metros) Ecobici, en Alcaldia, Benito Juárez, Cuauhtemoc, Miguel Hidalgo, Ciudade de México",location_l,COORDENADAS LATITUD DECIMAS DE GRADO,Número decimales,Valor Y,Pública,Proyección cartografica UTM zona 14,Obligatorio,Sin datos vacios,Shape file (.shp)
+Movilidad; Conectividad; Infraestructura y Obra Pública,buffer_ecobici,Área de influencia de Ecobici (500 mts),"Capa de información geoespacial que muestra la cobertura o área de influencia (150 metros) Ecobici, en Alcaldia, Benito Juárez, Cuauhtemoc, Miguel Hidalgo, Ciudade de México",location_1,COORDENADAS LONGITUD DECIMAS DE GRADO,Número decimales,Valor X,Pública,Proyección cartografica UTM zona 14,Obligatorio,Sin datos vacios,Shape file (.shp)
+Movilidad; Conectividad; Infraestructura y Obra Pública,buffer_ecobici,Área de influencia de Ecobici (500 mts),"Capa de información geoespacial que muestra la cobertura o área de influencia (150 metros) Ecobici, en Alcaldia, Benito Juárez, Cuauhtemoc, Miguel Hidalgo, Ciudade de México",BUFF_DIST,DISTANCIA BUFFER,Número entero ,150,Pública,,Obligatorio,Sin datos vacios,Shape file (.shp)
